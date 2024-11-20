@@ -56,7 +56,7 @@ class ReverieServer:
     self.sim_code = sim_code
     sim_folder = f"{fs_storage}/{self.sim_code}"
     copyanything(fork_folder, sim_folder)
-
+    # default: ./environment/frontend_server/storage/base_the_ville_isabella_maria_klaus/reverie
     with open(f"{sim_folder}/reverie/meta.json") as json_file:  
       reverie_meta = json.load(json_file)
 
@@ -86,7 +86,7 @@ class ReverieServer:
     # <maze> is the main Maze instance. Note that we pass in the maze_name
     # (e.g., "double_studio") to instantiate Maze. 
     # e.g., Maze("double_studio")
-    self.maze = Maze(reverie_meta['maze_name'])
+    self.maze = Maze(reverie_meta['maze_name']) # default: the_ville
     
     # <step> denotes the number of steps that our game has taken. A step here
     # literally translates to the number of moves our personas made in terms
@@ -610,55 +610,3 @@ if __name__ == '__main__':
 
   rs = ReverieServer(origin, target)
   rs.open_server()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
